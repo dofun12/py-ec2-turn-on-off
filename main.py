@@ -100,7 +100,7 @@ if __name__ == '__main__':
     triggerEnd = CronTrigger.from_crontab(cron_end)
 
     log.info(f"Next execution of start ({cron_start}) is {triggerStart.get_next_fire_time(None, dt.datetime.now())}")
-    log.info(f"Next execution of stop ({cron_end}) is {triggerStart.get_next_fire_time(None, dt.datetime.now())}")
+    log.info(f"Next execution of stop ({cron_end}) is {triggerEnd.get_next_fire_time(None, dt.datetime.now())}")
 
     scheduler.add_job(enable_all, trigger=triggerStart, name='start')
     scheduler.add_job(disable_all, trigger=triggerEnd, name='stop')
