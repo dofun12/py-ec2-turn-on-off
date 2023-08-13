@@ -103,7 +103,7 @@ if __name__ == '__main__':
     log.info(f"Next execution of stop ({cron_end}) is {triggerStart.get_next_fire_time(None, dt.datetime.now())}")
 
     scheduler.add_job(enable_all, trigger=triggerStart, name='start')
-    scheduler.add_job(disable_all, trigger=triggerStart, name='stop')
+    scheduler.add_job(disable_all, trigger=triggerEnd, name='stop')
 
     scheduler.start()
 
