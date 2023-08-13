@@ -2,8 +2,6 @@ FROM python:3.10
 WORKDIR /app
 
 
-COPY requirements.txt requirements.txt
+ADD . .
 RUN pip3 install -r requirements.txt
-
-COPY . .
 ENTRYPOINT ["python3", "main.py"]
